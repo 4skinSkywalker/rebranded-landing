@@ -5,7 +5,7 @@ startEboxLogoAnimation();
 
 // define images
 var images = Array(20).fill(0).map((_, i) =>
-    `/img/ebox-logo-animation-frames/frame_${ (i+"").padStart(2, "0") }_delay-0.04s.png`
+    `img/ebox-logo-animation-frames/frame_${ (i+"").padStart(2, "0") }_delay-0.04s.png`
 );
 
 // TweenMax can tween any property of any object. We use this object to cycle through the array
@@ -62,7 +62,7 @@ rotateText();
 
 // define images
 var images2 = Array(61).fill(0).map((_, i) =>
-    `/img/rotating-cube/frame_${ (i+"").padStart(2, "0") }_delay-0.03s.png`
+    `img/rotating-cube/frame_${ (i+"").padStart(2, "0") }_delay-0.03s.png`
 );
 
 // TweenMax can tween any property of any object. We use this object to cycle through the array

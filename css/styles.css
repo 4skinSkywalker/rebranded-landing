@@ -1,0 +1,204 @@
+:root {
+  --bs-body-rgb-alt: var(--bs-body-bg-rgb-alt); /* Fix Bootstrap-Nightshade missing variable */
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+#rotatedText, #rotatedTextUnderline {
+  transition: all .45s ease;
+}
+
+.magic-border-outer {
+  position: relative;
+  padding: 2rem;
+  border: .5rem solid var(--bs-primary);
+}
+
+.magic-border-inner {
+  content: "";
+  position: absolute;
+  top: -.5rem;
+  left: -.5rem;
+  width: calc(100% + 1rem);
+  height: calc(100% + 1rem);
+  border: .5rem solid var(--bs-primary);
+}
+
+.hero {
+  position: sticky;
+  z-index: -1;
+}
+
+.hero > h2 {
+  top: 22.5%;
+}
+
+/*** scrollbar
+ *    ███████╗ ██████╗██████╗  ██████╗ ██╗     ██╗     ██████╗  █████╗ ██████╗ 
+ *    ██╔════╝██╔════╝██╔══██╗██╔═══██╗██║     ██║     ██╔══██╗██╔══██╗██╔══██╗
+ *    ███████╗██║     ██████╔╝██║   ██║██║     ██║     ██████╔╝███████║██████╔╝
+ *    ╚════██║██║     ██╔══██╗██║   ██║██║     ██║     ██╔══██╗██╔══██║██╔══██╗
+ *    ███████║╚██████╗██║  ██║╚██████╔╝███████╗███████╗██████╔╝██║  ██║██║  ██║
+ *    ╚══════╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+ *                                                                             
+ */
+::-webkit-scrollbar-track, html.dark ::-webkit-scrollbar-track {
+  box-shadow: inset -1px 0 .3em #fff3,
+              inset 1px 0 .3em #0003;
+}
+html.dark ::-webkit-scrollbar-track, html.dark ::-webkit-scrollbar-track {
+  background-color: var(--bs-body-bg-alt);
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+  background-color: var(--bs-body-bg);
+}
+html.dark ::-webkit-scrollbar {
+  background-color: var(--bs-body-bg-alt);
+}
+
+::-webkit-scrollbar-thumb, html.dark ::-webkit-scrollbar-thumb {
+  background-color: #f60a;
+}
+
+/*** tm carousel
+ *    ████████╗███╗   ███╗     ██████╗ █████╗ ██████╗  ██████╗ ██╗   ██╗███████╗███████╗██╗     
+ *    ╚══██╔══╝████╗ ████║    ██╔════╝██╔══██╗██╔══██╗██╔═══██╗██║   ██║██╔════╝██╔════╝██║     
+ *       ██║   ██╔████╔██║    ██║     ███████║██████╔╝██║   ██║██║   ██║███████╗█████╗  ██║     
+ *       ██║   ██║╚██╔╝██║    ██║     ██╔══██║██╔══██╗██║   ██║██║   ██║╚════██║██╔══╝  ██║     
+ *       ██║   ██║ ╚═╝ ██║    ╚██████╗██║  ██║██║  ██║╚██████╔╝╚██████╔╝███████║███████╗███████╗
+ *       ╚═╝   ╚═╝     ╚═╝     ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚══════╝╚══════╝╚══════╝
+ *                                                                                              
+ */
+label[for^="tm"] {
+  transition: all .125s ease;
+}
+
+input[name="tm"]#tm-1:checked ~ .container label[for="tm-1"],
+input[name="tm"]#tm-2:checked ~ .container label[for="tm-2"],
+input[name="tm"]#tm-3:checked ~ .container label[for="tm-3"],
+input[name="tm"]#tm-4:checked ~ .container label[for="tm-4"],
+input[name="tm"]#tm-5:checked ~ .container label[for="tm-5"],
+input[name="tm"]#tm-6:checked ~ .container label[for="tm-6"],
+input[name="tm"]#tm-7:checked ~ .container label[for="tm-7"],
+input[name="tm"]#tm-8:checked ~ .container label[for="tm-8"] {
+  margin-right: .25rem;
+  font-weight: bold;
+}
+
+input[name="tm"]#tm-1:checked ~ .progress .progress-bar { width: 35%; }
+input[name="tm"]#tm-2:checked ~ .progress .progress-bar { width: 18%; }
+input[name="tm"]#tm-3:checked ~ .progress .progress-bar { width: 16%; }
+input[name="tm"]#tm-4:checked ~ .progress .progress-bar { width: 12%; }
+input[name="tm"]#tm-5:checked ~ .progress .progress-bar { width: 10%; }
+input[name="tm"]#tm-6:checked ~ .progress .progress-bar { width: 4%; }
+input[name="tm"]#tm-7:checked ~ .progress .progress-bar { width: 3%; }
+input[name="tm"]#tm-8:checked ~ .progress .progress-bar { width: 2%; }
+
+.tm-content-wrapper {
+  max-width: 576px;
+  border: 0 solid #0000;
+  transition: all .125s ease;
+}
+
+.tm-content {
+  display: none;
+  font-size: 1.25rem!important;
+  background-color: #fffa;
+  overflow: auto;
+}
+
+input[name="tm"]#tm-1:checked ~ .container .tm-content-wrapper {
+  border-width: 4rem;
+  border-color: #f60f;
+}
+input[name="tm"]#tm-2:checked ~ .container .tm-content-wrapper {
+  border-width: 3.5rem;
+  border-color: #f60d;
+}
+input[name="tm"]#tm-3:checked ~ .container .tm-content-wrapper {
+  border-width: 3rem;
+  border-color: #f60b;
+}
+input[name="tm"]#tm-4:checked ~ .container .tm-content-wrapper {
+  border-width: 2.5rem;
+  border-color: #f609;
+}
+input[name="tm"]#tm-5:checked ~ .container .tm-content-wrapper {
+  border-width: 2rem;
+  border-color: #f607;
+}
+input[name="tm"]#tm-6:checked ~ .container .tm-content-wrapper {
+  border-width: 1.5rem;
+  border-color: #f605;
+}
+input[name="tm"]#tm-7:checked ~ .container .tm-content-wrapper {
+  border-width: 1rem;
+  border-color: #f603;
+}
+input[name="tm"]#tm-8:checked ~ .container .tm-content-wrapper {
+  border-width: .5rem;
+  border-color: #f601;
+}
+
+input[name="tm"]#tm-1:checked ~ .container .tm-content:nth-child(1),
+input[name="tm"]#tm-2:checked ~ .container .tm-content:nth-child(2),
+input[name="tm"]#tm-3:checked ~ .container .tm-content:nth-child(3),
+input[name="tm"]#tm-4:checked ~ .container .tm-content:nth-child(4),
+input[name="tm"]#tm-5:checked ~ .container .tm-content:nth-child(5),
+input[name="tm"]#tm-6:checked ~ .container .tm-content:nth-child(6),
+input[name="tm"]#tm-7:checked ~ .container .tm-content:nth-child(7),
+input[name="tm"]#tm-8:checked ~ .container .tm-content:nth-child(8) {
+  display: block;
+}
+
+@media(max-width: 576px) {
+
+  .hero {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .hero > img {
+    max-width: 90%;
+  }
+
+  .hero > h2 {
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+  }
+
+  input[name="tm"]#tm-1:checked ~ .container .tm-content-wrapper { border-width: 2.5rem; }
+  input[name="tm"]#tm-2:checked ~ .container .tm-content-wrapper { border-width: 2.25rem; }
+  input[name="tm"]#tm-3:checked ~ .container .tm-content-wrapper { border-width: 1.75rem; }
+  input[name="tm"]#tm-4:checked ~ .container .tm-content-wrapper { border-width: 1.5rem; }
+  input[name="tm"]#tm-5:checked ~ .container .tm-content-wrapper { border-width: 1.25rem; }
+  input[name="tm"]#tm-6:checked ~ .container .tm-content-wrapper { border-width: 1rem; }
+  input[name="tm"]#tm-7:checked ~ .container .tm-content-wrapper { border-width: .75rem; }
+  input[name="tm"]#tm-8:checked ~ .container .tm-content-wrapper { border-width: .5rem; }
+
+}
+
+@media(min-width: 576px) {
+
+  .hero {
+    top: 10rem;
+  }
+
+  .hero > img {
+    max-width: 576px;
+  }
+
+  .animated-cube {
+    margin: -128px 0 -128px 0;
+  }
+
+  .features {
+    padding: 40vh 0 60vh 0;
+  }
+
+}

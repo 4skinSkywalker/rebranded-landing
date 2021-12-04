@@ -1,5 +1,16 @@
+// TODO: optimize images and listen for onload (maybe do it with a promise)
+function preloadImages(imageUrls) {
+    let images = [];
+    for (let imgUrl of imageUrls) {
+        let img = new Image();
+        img.src = imgUrl;
+        images.push(img);
+    }
+    return images;
+}
+
 function startEboxLogoAnimation() {
-    document.querySelector('#ebox-logo-animation-image').setAttribute('src','./img/ebox-logo-animation.gif');
+    document.querySelector('#ebox-logo-animation-image').setAttribute('src','img/ebox-logo-animation.gif');
 }
 startEboxLogoAnimation();
 
@@ -7,6 +18,7 @@ startEboxLogoAnimation();
 var images = Array(20).fill(0).map((_, i) =>
     `img/ebox-logo-animation-frames/frame_${ (i+"").padStart(2, "0") }_delay-0.04s.png`
 );
+// preloadImages(images);
 
 // TweenMax can tween any property of any object. We use this object to cycle through the array
 var obj = {curImg: 0};
@@ -17,7 +29,7 @@ var tween = TweenMax.to(obj, 0.5,
         curImg: images.length - 1,	// animate propery curImg to number of images
         roundProps: "curImg",		// only integers so it can be used as an array index
         repeat: 3,					// repeat 3 times
-        immediateRender: true,	    // load first image automatically
+        immediateRender: false,	    // load first image automatically
         ease: Linear.easeNone,		// show every image the same ammount of time
         onUpdate: function () {
           document.querySelector("#ebox-logo-animation-image").setAttribute("src", images[obj.curImg]);                 // set the image source
@@ -31,7 +43,7 @@ var controller = new ScrollMagic.Controller();
 // build scene
 var scene = new ScrollMagic.Scene({ triggerElement: "#ebox-logo-animation-trigger", duration: 300 })
                            .setTween(tween)
-                        //    .addIndicators() // add indicators (requires plugin)
+                           .addIndicators() // add indicators (requires plugin)
                            .addTo(controller);
 
 
@@ -64,6 +76,7 @@ rotateText();
 var images2 = Array(61).fill(0).map((_, i) =>
     `img/rotating-cube/frame_${ (i+"").padStart(2, "0") }_delay-0.03s.png`
 );
+// preloadImages(images2);
 
 // TweenMax can tween any property of any object. We use this object to cycle through the array
 var obj2 = {curImg: 0};

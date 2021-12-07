@@ -48,6 +48,7 @@ function preloadImgs(imageUrls) {
 
 function replaceImg(oldImg, newImg) {
     let parent = oldImg.parentElement;
+    newImg.classList = oldImg.classList;
     newImg.id = oldImg.id;
     newImg.alt = oldImg.alt;
     parent.replaceChild(newImg, oldImg);
@@ -102,7 +103,7 @@ function scrollImgSequencer(images, imageSelector, triggerElement, duration) {
         .Scene({ triggerElement, duration })
         .setTween(tween)
         // .addIndicators()
-        addTo(new ScrollMagic.Controller());
+        .addTo(new ScrollMagic.Controller());
 }
 
 // Async execution context

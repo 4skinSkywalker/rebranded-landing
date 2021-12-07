@@ -98,10 +98,10 @@ function scrollImgSequencer(images, imageSelector, triggerElement, duration) {
     );
 
     // build scene
-    new ScrollMagic.
-        Scene({ triggerElement, duration }).
-        setTween(tween).
-        addIndicators().
+    new ScrollMagic
+        .Scene({ triggerElement, duration })
+        .setTween(tween)
+        // .addIndicators()
         addTo(new ScrollMagic.Controller());
 }
 

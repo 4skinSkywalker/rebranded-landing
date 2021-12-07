@@ -172,6 +172,14 @@ input[name="tm"]#tm-8:checked ~ .container .tm-content:nth-child(8) {
     transform: translateY(-50%);
   }
 
+  .tm-ul {
+    height: 222px;
+    overflow: auto;
+    padding: 1rem 2rem 1rem 0;
+    background-color: #fffa;
+    box-shadow: inset 0 0 10px #0002;
+  }
+
   input[name="tm"]#tm-1:checked ~ .container .tm-content-wrapper { border-width: 2.5rem; }
   input[name="tm"]#tm-2:checked ~ .container .tm-content-wrapper { border-width: 2.25rem; }
   input[name="tm"]#tm-3:checked ~ .container .tm-content-wrapper { border-width: 1.75rem; }

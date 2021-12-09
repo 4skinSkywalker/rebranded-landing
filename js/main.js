@@ -71,9 +71,10 @@ function scrollParallax(elementSelector, triggerElement, duration, transformFrom
         ]);
 
     // build scene
-    new ScrollMagic.Scene({ triggerElement, duration }).
-        setTween(tween).
-        addTo(new ScrollMagic.Controller());
+    new ScrollMagic.Scene({ triggerElement, duration })
+        .setTween(tween)
+        // .addIndicators()
+        .addTo(new ScrollMagic.Controller());
 }
 
 function scrollImgSequencer(images, imageSelector, triggerElement, duration) {
@@ -151,6 +152,14 @@ function scrollImgSequencer(images, imageSelector, triggerElement, duration) {
         333,
         "translate(0, 0)",
         "translate(-2rem, -2rem)"
+    );
+
+    scrollParallax(
+        "#roadmap-ghost-title",
+        "#roadmap-ghost-title-trigger",
+        333,
+        "translate(-50%, -20%)",
+        "translate(-50%, -80%)"
     );
 
 })();

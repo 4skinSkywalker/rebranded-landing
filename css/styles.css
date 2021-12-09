@@ -35,6 +35,84 @@
   top: 22.5%;
 }
 
+/*** roadmap
+ *    ██████╗  ██████╗  █████╗ ██████╗ ███╗   ███╗ █████╗ ██████╗ 
+ *    ██╔══██╗██╔═══██╗██╔══██╗██╔══██╗████╗ ████║██╔══██╗██╔══██╗
+ *    ██████╔╝██║   ██║███████║██║  ██║██╔████╔██║███████║██████╔╝
+ *    ██╔══██╗██║   ██║██╔══██║██║  ██║██║╚██╔╝██║██╔══██║██╔═══╝ 
+ *    ██║  ██║╚██████╔╝██║  ██║██████╔╝██║ ╚═╝ ██║██║  ██║██║     
+ *    ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝     
+ *                                                                
+ */
+#roadmap-header {
+  position: relative;
+}
+
+#roadmap-header > div {
+  text-transform: uppercase;
+  font-size: 5.55rem;
+  color: #0000;
+  -webkit-text-stroke: 2px #f604;
+}
+
+#roadmap-header > div,
+#roadmap-header > h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#roadmap {
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+}
+
+#roadmap > div {
+  flex-shrink: 0;
+  width: 256px;
+  text-align: center;
+}
+
+#roadmap > div > div {
+  position: relative;
+  height: 50px;
+}
+
+#roadmap > div > div > * {
+  position: absolute;
+  top: 50%;
+}
+
+#roadmap > div > div > .left,
+#roadmap > div > div > .right {
+  transform: translateY(-50%);
+  width: 50%;
+  height: 2px;
+  background-color: var(--bs-primary);
+}
+
+#roadmap > div > div > .right {
+  right: 0;
+}
+
+#roadmap > div > div > .left.active,
+#roadmap > div > div > .right.active {
+  box-shadow: 0 0 6px 2px #f60;
+}
+
+#roadmap > div > div > .form-check {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#roadmap > div > div > .form-check .form-check-input {
+  opacity: 1!important;
+}
+
 /*** scrollbar
  *    ███████╗ ██████╗██████╗  ██████╗ ██╗     ██╗     ██████╗  █████╗ ██████╗ 
  *    ██╔════╝██╔════╝██╔══██╗██╔═══██╗██║     ██║     ██╔══██╗██╔══██╗██╔══██╗
@@ -87,6 +165,17 @@ input[name="tm"]#tm-7:checked ~ .container label[for="tm-7"],
 input[name="tm"]#tm-8:checked ~ .container label[for="tm-8"] {
   margin-right: .25rem;
   font-weight: bold;
+}
+
+input[name="tm"]#tm-1:checked ~ .container label[for="tm-1"] span,
+input[name="tm"]#tm-2:checked ~ .container label[for="tm-2"] span,
+input[name="tm"]#tm-3:checked ~ .container label[for="tm-3"] span,
+input[name="tm"]#tm-4:checked ~ .container label[for="tm-4"] span,
+input[name="tm"]#tm-5:checked ~ .container label[for="tm-5"] span,
+input[name="tm"]#tm-6:checked ~ .container label[for="tm-6"] span,
+input[name="tm"]#tm-7:checked ~ .container label[for="tm-7"] span,
+input[name="tm"]#tm-8:checked ~ .container label[for="tm-8"] span {
+  color: var(--bs-primary);
 }
 
 input[name="tm"]#tm-1:checked ~ .progress .progress-bar { width: 35%; }
@@ -155,6 +244,15 @@ input[name="tm"]#tm-8:checked ~ .container .tm-content:nth-child(8) {
   display: block;
 }
 
+/*** media queries
+ *    ███╗   ███╗███████╗██████╗ ██╗ █████╗ ███████╗
+ *    ████╗ ████║██╔════╝██╔══██╗██║██╔══██╗██╔════╝
+ *    ██╔████╔██║█████╗  ██║  ██║██║███████║███████╗
+ *    ██║╚██╔╝██║██╔══╝  ██║  ██║██║██╔══██║╚════██║
+ *    ██║ ╚═╝ ██║███████╗██████╔╝██║██║  ██║███████║
+ *    ╚═╝     ╚═╝╚══════╝╚═════╝ ╚═╝╚═╝  ╚═╝╚══════╝
+ *                                                  
+ */
 @media(max-width: 576px) {
 
   .hero {
@@ -173,9 +271,10 @@ input[name="tm"]#tm-8:checked ~ .container .tm-content:nth-child(8) {
   }
 
   .tm-ul {
-    height: 222px;
-    overflow: auto;
+    height: 165px;
+    margin: 0 -0.75rem 1rem -0.75rem;
     padding: 1rem 2rem 1rem 0;
+    overflow: auto;
     background-color: #fffa;
     box-shadow: inset 0 0 10px #0002;
   }
@@ -188,6 +287,14 @@ input[name="tm"]#tm-8:checked ~ .container .tm-content:nth-child(8) {
   input[name="tm"]#tm-6:checked ~ .container .tm-content-wrapper { border-width: 1rem; }
   input[name="tm"]#tm-7:checked ~ .container .tm-content-wrapper { border-width: .75rem; }
   input[name="tm"]#tm-8:checked ~ .container .tm-content-wrapper { border-width: .5rem; }
+
+  #roadmap {
+    justify-content: flex-start;
+  }
+
+  #roadmap-header > div {
+    font-size: 3.33rem;
+  }
 
 }
 

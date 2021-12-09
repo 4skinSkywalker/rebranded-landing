@@ -72,17 +72,38 @@
 #roadmap > div {
   flex-shrink: 0;
   width: 256px;
+}
+
+#roadmap > div > h2 {
   text-align: center;
 }
 
-#roadmap > div > div {
+#roadmap > div > .line {
   position: relative;
   height: 50px;
 }
 
-#roadmap > div > div > * {
+#roadmap > div > .line > * {
   position: absolute;
   top: 50%;
+}
+
+#roadmap > div > div > .form-check.done::after,
+#roadmap > div > div > .form-check.active::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#roadmap > div > div > .form-check.done::after {
+  box-shadow: 0 0 25px 25px #f602;
+}
+
+#roadmap > div > div > .form-check.active::after {
+  box-shadow: 0 0 50px 50px #f603;
 }
 
 #roadmap > div > div > .left,

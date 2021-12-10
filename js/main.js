@@ -119,13 +119,31 @@ function scrollImgSequencer(images, imageSelector, triggerElement, duration) {
 
     await delay(450);
 
+    // Create tiles for partners section
+    for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < 5; j++) {
+            let img = document.createElement("IMG");
+            img.id = `tile-${i}-${j}`;
+            if (j < 1) {
+                img.src = `img/tiles/grey-tile.png`;
+            }
+            else if (j < 3) {
+                img.src = `img/tiles/orange-tile.png`;
+            }
+            else {
+                img.src = `img/tiles/mixed-tile.png`;
+            }
+            document.querySelector("#partners-bg-tiles").appendChild(img);
+        }
+    }
+
     loader.hide();
 
     replaceImg(
         document.querySelector("#ebox-logo-animation-image"),
         preloadedEboxLogo
     );
-    
+
     let site = document.getElementById('site');
     classie.removeClass( site, 'show' );
     classie.addClass( site, 'show' );
@@ -133,17 +151,18 @@ function scrollImgSequencer(images, imageSelector, triggerElement, duration) {
     rotateText();
 
     scrollImgSequencer(
-        eboxLogoImages,
-        "#ebox-logo-animation-image",
-        "#ebox-logo-animation-trigger",
-        333
-    );
-
-    scrollImgSequencer(
         rotatingCubeImages,
         "#rotating-cube",
         "#rotating-cube-trigger",
         555
+    );
+
+    scrollParallax(
+        ".animated-cube",
+        "#cube-parallax-trigger",
+        666,
+        "translate(0, 120px)",
+        "translate(0, -120px)"
     );
     
     scrollParallax(
@@ -160,6 +179,27 @@ function scrollImgSequencer(images, imageSelector, triggerElement, duration) {
         333,
         "translate(-50%, -20%)",
         "translate(-50%, -80%)"
+    );
+
+    for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < 5; j++) {
+            scrollParallax(
+                `#tile-${i}-${j}`,
+                "#partners-bg-tiles-trigger",
+                i * 50 + j * 75 + 222,
+                "translate(4rem, 4rem)",
+                "translate(-4rem, -4rem)"
+            );
+        }
+    }
+
+    await delay(3760);
+
+    scrollImgSequencer(
+        eboxLogoImages,
+        "#ebox-logo-animation-image",
+        "#ebox-logo-animation-trigger",
+        333
     );
 
 })();

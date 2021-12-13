@@ -107,8 +107,26 @@ function scrollImgSequencer(images, imageSelector, triggerElement, duration) {
         .addTo(new ScrollMagic.Controller());
 }
 
+function initScrollSpy() {
+	var controller = new ScrollMagic.Controller({ globalSceneOptions: { duration: 666 } });
+	new ScrollMagic.Scene({ triggerElement: "#token-section" })
+				   .setClassToggle("#token-link", "active")
+				   .addTo(controller);
+	new ScrollMagic.Scene({ triggerElement: "#partners-section" })
+				   .setClassToggle("#partners-link", "active")
+		           .addTo(controller);
+	new ScrollMagic.Scene({ triggerElement: "#team-section" })
+				   .setClassToggle("#team-link", "active")
+				   .addTo(controller);
+	new ScrollMagic.Scene({ triggerElement: "#roadmap-section" })
+				   .setClassToggle("#roadmap-link", "active")
+				   .addTo(controller);
+}
+
 // Async execution context
 (async function() {
+
+    initScrollSpy();
 
     loader.show();
 

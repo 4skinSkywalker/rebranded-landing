@@ -1,9 +1,22 @@
+@font-face {
+  font-family: CenturyGothic;
+  src: url(../font/CenturyGothic.ttf);
+}
+
 :root {
   --bs-body-rgb-alt: var(--bs-body-bg-rgb-alt); /* Fix Bootstrap-Nightshade missing variable */
 }
 
+body {
+  font-family: 'CenturyGothic', sans-serif;
+}
+
 .pointer {
   cursor: pointer;
+}
+
+.navbar-nav a.active {
+  color: var(--bs-primary)!important;
 }
 
 #rotatedText, #rotatedTextUnderline {
@@ -50,6 +63,7 @@
 }
 
 #partners-bg-tiles {
+  position: relative;
   z-index: -1;
   display: grid;
   grid-template-columns: repeat(5, auto);
@@ -63,6 +77,10 @@
 #partners-bg-tiles > img {
   height: 5vw;
   max-height: 115px;
+}
+
+.partners-section .img-thumbnail {
+  background-color: #fffa;
 }
 
 /*** roadmap
@@ -330,6 +348,7 @@ input[name="tm"]#tm-8:checked ~ .container .tm-content:nth-child(8) {
   }
 
   .hero-partners > h2 {
+    top: 0;
     left: 5%;
   }
 

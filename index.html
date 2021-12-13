@@ -15,7 +15,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="favicon-180x180.png">
 
-    <meta property="og:title" content="ebox | app">
+    <meta property="og:title" content="ebox | landing">
     <meta property="og:image" content="http://www.ebox.org/img/og-image.jpg">
     <meta property="og:description" content="With the power of the blockchain, we make sure you'll never lose funds due to a wrong transaction address again.">
 
@@ -36,6 +36,7 @@
 <body>
 
     <div id="site">
+
         <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-light border-bottom" style="z-index: 1;">
             <div class="container">
                 <a class="navbar-brand" href="#">
@@ -48,19 +49,19 @@
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold gap-3">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">App</a>
+                            <a class="nav-link" href="#">App</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Token</a>
+                            <a class="nav-link" id="token-link" href="#token-section">Token</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Partners</a>
+                            <a class="nav-link" id="partners-link" href="#partners-section">Partners</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Team</a>
+                            <a class="nav-link" id="team-link" href="#team-section">Team</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Roadmap</a>
+                            <a class="nav-link" id="roadmap-link" href="#roadmap-section">Roadmap</a>
                         </li>
                     </ul>
                     <div class="d-flex align-items-center gap-5 mx-5">
@@ -79,10 +80,10 @@
             <img id="ebox-logo-animation-image" class="img-fluid" src="img/ebox-logo-animation-start.jpg" alt="ebox animation">
             <div class="position-absolute text-center" style="bottom: 16.6%;">
                 <div class="d-flex gap-3 mb-3">
-                    <button class="btn btn-lg btn-outline-primary" style="width: 155px;">Uniswap</button>
-                    <button class="btn btn-lg btn-outline-primary" style="width: 155px;">PancakeSwap</button>
+                    <button class="btn btn-lg btn-outline-primary" style="width: 176px;">Uniswap</button>
+                    <button class="btn btn-lg btn-outline-primary" style="width: 176px;">PancakeSwap</button>
                 </div>
-                <button class="btn btn-lg btn-outline-primary" style="width: 155px;">Whitepaper</button>
+                <button class="btn btn-lg btn-outline-primary" style="width: 176px;">Whitepaper</button>
             </div>
             <div id="ebox-logo-animation-trigger" class="position-absolute" style="top: 50%;"></div>
         </section>
@@ -199,7 +200,7 @@
             <button class="btn btn-outline-primary">Wanna try? Click here.</button>
         </section>
     
-        <section class="position-relative" style="margin: 12rem 0; padding: 3rem 0;">
+        <section id="token-section" class="position-relative border-bottom border-top" style="margin: 12rem 0; padding: 3rem 0;">
             <input type="radio" name="tm" id="tm-1" hidden checked>
             <input type="radio" name="tm" id="tm-2" hidden>
             <input type="radio" name="tm" id="tm-3" hidden>
@@ -314,25 +315,127 @@
 
         </section>
 
-        <section class="partners-section container text-black">
+        <section id="partners-section" class="partners-section container text-black">
             <div class="hero-partners">
                 <div id="partners-bg-tiles"></div>
-                <h2 class="h1">Our Partners</h2>
-                <div class="container">
-                    <div class="row">
-                        <div class="d-none d-md-block col"></div>
-                        <div class="col" style="max-width: 576px;">
-                            <p class="fs-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut, a odit. Error quaerat aliquam ad sed repudiandae. Velit, saepe beatae. Corporis laborum magni repellat molestias nihil a unde, accusamus explicabo.</p>
-                        </div>
-                    </div>
+                <h2 class="h1 fw-bolder">Our Partners</h2>
+                <div class="container" style="margin-top: -9rem;">
+                    <ul class="list-unstyled d-flex flex-wrap justify-content-center">
+                        <li class="pointer m-2">
+                            <a target="_blank" href="https://www.duckdao.io/">
+                                <img src="img/partners/partner_duckdao.png" alt="DuckDAO" class="img-thumbnail" />
+                            </a>
+                        </li>
+                        <li class="pointer m-2">
+                            <a target="_blank" href="https://www.polygon.technology/">
+                                <img src="img/partners/partner_polygon.png" alt="Polygon" class="img-thumbnail" />
+                            </a>
+                        </li>
+                        <li class="pointer m-2">
+                            <a target="_blank" href="https://reef.finance/">
+                                <img src="img/partners/partner_reef.png" alt="Reef" class="img-thumbnail" />
+                            </a>
+                        </li>
+                        <li class="pointer m-2">
+                            <a target="_blank" href="https://www.vysyn.io/">
+                                <img src="img/partners/partner_vysyn.png" alt="VYSYN" class="img-thumbnail" />
+                            </a>
+                        </li>
+                        <li class="pointer m-2">
+                            <a target="_blank" href="https://www.englishforums.com/">
+                                <img src="img/partners/partner_english_forward.png" alt="English Forward" class="img-thumbnail" />
+                            </a>
+                        </li>
+                        <li class="pointer m-2">
+                            <a target="_blank" href="https://www.Chipstars.bet/">
+                                <img src="img/partners/partner_chipstars.png" alt="Chipstars" class="img-thumbnail" />
+                            </a>
+                        </li>
+                        <li class="pointer m-2">
+                            <a target="_blank" href="https://www.marketacross.com/">
+                                <img src="img/partners/partner_marketacross.png" alt="MarketAcross" class="img-thumbnail" />
+                            </a>
+                        </li>
+                        <li class="pointer m-2">
+                            <a target="_blank" href="https://www.keydifferencemedia.com/">
+                                <img src="img/partners/partner_kdm.png" alt="KeyDifferenceMedia" class="img-thumbnail" />
+                            </a>
+                        </li>
+                        <li class="pointer m-2">
+                            <a target="_blank" href="https://www.amplifi.vc/">
+                                <img src="img/partners/partner_amplifi.png" alt="Amplifi VC" class="img-thumbnail" />
+                            </a>
+                        </li>
+                        <li class="pointer m-2">
+                            <a target="_blank" href="https://nabais.capital/">
+                                <img src="img/partners/partner_nabais.png" alt="Nabais VC" class="img-thumbnail" />
+                            </a>
+                        </li>
+                        <li class="pointer m-2">
+                            <a target="_blank" href="https://www.vendetta.capital/">
+                                <img src="img/partners/partner_vendetta.png" alt="Vendetta" class="img-thumbnail" />
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+        </section>
 
+        <section id="team-section" class="px-3 py-5">
+            <div class="container col-xxl-8 text-center py-5">
+                <h2 class="display-5 fw-bold text-capitalize mb-5">Team</h2>
+                <ul class="list-unstyled row g-0 gap-5 justify-content-center">
+                    <li class="col-auto">
+                        <div
+                            class="btn-primary shadow rounded-alot d-flex flex-column justify-content-between p-3 rounded-alot text-white">
+                            <img style="max-width: 290px;" src="img/team/Lukas Schiefer.jpg" alt="lukas image" class="rounded-alot">
+                            <div class="mb-3" style="margin-top: -1.75rem">
+                                <a href="https://www.linkedin.com/in/lukas-schiefer-2b3a88208" target="_blank"
+                                    class="scale-on-hover btn bg-white fs-3 rounded-circle text-secondary">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                            </div>
+                            <h3 class="h5">Lukas Schiefer</h3>
+                            <p class="lead">Co-founder</p>
+                        </div>
+                    </li>
+                    <li class="col-auto">
+                        <div
+                            class="btn-primary shadow rounded-alot d-flex flex-column justify-content-between p-3 rounded-alot text-white">
+                            <img style="max-width: 290px;" src="img/team/Lukas Pratschner.jpg" alt="luke image" class="rounded-alot">
+                            <div class="mb-3" style="margin-top: -1.75rem">
+                                <a href="https://www.linkedin.com/in/lukas-p-31bb15119" target="_blank"
+                                    class="scale-on-hover btn bg-white fs-3 rounded-circle text-secondary">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                            </div>
+                            <h3 class="h5">Lukas Pratschner</h3>
+                            <p class="lead">Co-founder</p>
+                        </div>
+                    </li>
+                    <li class="col-auto">
+                        <div
+                            class="btn-primary shadow rounded-alot d-flex flex-column justify-content-between p-3 rounded-alot text-white">
+                            <img style="max-width: 290px;" src="img/team/Paul Simode.jpg" alt="paul image" class="rounded-alot">
+                            <div class="mb-3" style="margin-top: -1.75rem">
+                                <a href="https://www.linkedin.com/in/paul-simode-136865206" target="_blank"
+                                    class="scale-on-hover btn bg-white fs-3 rounded-circle text-secondary">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                            </div>
+                            <h3 class="h5">Paul Simode</h3>
+                            <p class="lead">Co-founder</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            
             <div id="roadmap-ghost-title-trigger"></div>
 
         </section>
 
-        <section style="margin-top: 12rem; padding: 3rem 0;">
+        <section id="roadmap-section" style="margin: 9rem 0; padding: 3rem 0;">
             <header id="roadmap-header">
                 <div id="roadmap-ghost-title">Developing</div>
                 <h2 class="h1">Roadmap</h2>
@@ -394,7 +497,7 @@
             </div>
         </section>
     
-        <section class="d-flex justify-content-center align-items-center" style="height: 75vh;">
+        <section class="d-flex justify-content-center align-items-center" style="margin: 9rem 0; padding: 3rem 0;">
             <div class="text-center" style="max-width: 576px;">
                 <h2 class="h1">Stay in touch</h2>
                 <p class="fs-4">Subscribe to the newsletter to be kept posted about Ebox updates and events.</p>
@@ -475,6 +578,7 @@
                 </div>
             </div>
         </footer>
+
     </div>
 
     <div id="loader" class="pageload-overlay" data-opening="m 40,-80 190,0 -305,290 C -100,140 0,0 40,-80 z">

@@ -143,13 +143,13 @@ function initScrollSpy() {
             let img = document.createElement("IMG");
             img.id = `tile-${i}-${j}`;
             if (j < 1) {
-                img.src = `img/tiles/grey-tile.png`;
+                img.src = `img/tiles/grey-tile.PNG`;
             }
             else if (j < 3) {
-                img.src = `img/tiles/orange-tile.png`;
+                img.src = `img/tiles/orange-tile.PNG`;
             }
             else {
-                img.src = `img/tiles/mixed-tile.png`;
+                img.src = `img/tiles/mixed-tile.PNG`;
             }
             document.querySelector("#partners-bg-tiles").appendChild(img);
         }
